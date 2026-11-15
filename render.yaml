@@ -1,1 +1,12 @@
-services:\n  - type: web\n    name: amar-bangladesh\n    runtime: python\n    buildCommand: pip install -r requirements.txt\n    startCommand: gunicorn wsgi:app\n    healthCheckPath: /api/status\n    envVars:\n      - key: PYTHON_VERSION\n        value: 3.12.8\n      - key: SECRET_KEY\n        generateValue: true\n
+services:
+  - type: web
+    name: amar-bangladesh
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:app
+    healthCheckPath: /api/status
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: SECRET_KEY
+        generateValue: true
